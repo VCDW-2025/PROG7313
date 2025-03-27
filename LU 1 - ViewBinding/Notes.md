@@ -47,5 +47,5 @@ binding = ActivityMainBinding.inflate(layoutInflater)
 
 "setContentView(binding.root)" sets the root view as the content view of the activity.
 
-### **Good Luck!**
+### **✅Good Luck!**
 
