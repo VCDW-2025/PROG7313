@@ -35,6 +35,8 @@ Go to the Firebase Console > Authentication > Sign-in method and enable Email/Pa
 
 ### Implement email and password authentication.
 
+**Eoor Tips:**
+
 **Make sure internet permissions for you project is enabled in your android manifest file**
 
 **Make sure your emulator is connected to the wifi**
@@ -43,7 +45,7 @@ Go to the Firebase Console > Authentication > Sign-in method and enable Email/Pa
 
 https://cloud.google.com/apis - This is where you will find your APIs for firebase projects
 
-**Instructions**
+**Instructions:**
 
 Create Two Kotlin Classes:
 
@@ -70,14 +72,14 @@ Collect the email and password from input fields.
 
 Check that neither is empty.
 
-Use FirebaseAuth’s createUserWithEmailAndPassword(...) method.
+Use FirebaseAuth’s createUserWithEmailAndPassword() method.
 
 If successful: show a toast and navigate to the login screen.
 
 If it fails: show a toast with the error message.
 
 - Implement Login Logic
-- 
+  
 In MainActivity:
 
 When the login button is clicked:
@@ -86,12 +88,12 @@ Collect email and password.
 
 Validate inputs.
 
-Use signInWithEmailAndPassword(...).
+Use signInWithEmailAndPassword().
 
 Show a success or failure toast based on the result.
 
 - Link Login and Register Screens
-- 
+  
 In both activities:
 
 Use an Intent to navigate between screens when the TextView link is clicked.
