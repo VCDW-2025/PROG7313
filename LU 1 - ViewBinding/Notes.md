@@ -12,8 +12,8 @@ This results in safer, cleaner, and more maintainable code.
 
 1. **🖱Enable ViewBinding in the App level gradle file**
 
-    buildFeatures {
-        viewBinding = true
+    buildFeatures { <br>
+        viewBinding = true <br>
    }
    
    This enables ViewBinding for your project.
