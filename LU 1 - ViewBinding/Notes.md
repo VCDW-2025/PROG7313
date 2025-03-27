@@ -10,31 +10,38 @@ This results in safer, cleaner, and more maintainable code.
 
 ### **How to implement View Binding:**
 
-1. Enable ViewBinding in the App level gradle file
+1. **Enable ViewBinding in the App level gradle file**
 
     buildFeatures {
-        // This enables ViewBinding for your project.
+        
         viewBinding = true
+   
     }
+   
+   This enables ViewBinding for your project.
 
    Layouts will be automatically generated with a name similar to: ActivityMainBinding.
 
-2. Use View Binding in Your Activity
+2. **Use View Binding in Your Activity**
 
 Import the generated binding class at the top of the .kt activity file
 
 eg:
+
 import com.talia.meetmewheregroup2.databinding.ActivityMainBinding
 
-3. Use Kotlin’s lateinit to declare the binding variable:
+3. **Use Kotlin’s lateinit to declare the binding variable.**
 
 eg:
+
 private lateinit var binding: ActivityMainBinding
 
-4. Inflate the layout and set the content view and set the activity's content view to the root of the binding.
+4. **Inflate the layout and set the content view and set the activity's content view to the root of the binding.**
 
 eg:
+
 binding = ActivityMainBinding.inflate(layoutInflater)
+
   setContentView(binding.root)
     
    
