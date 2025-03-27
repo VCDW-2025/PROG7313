@@ -6,7 +6,7 @@ You're developing a simple Authentication App for a local book club. Members sho
 
 Objectives:
 
-- Integrating Firebase Authentication into an Android project. Use this website as a guide:
+### Integrating Firebase Authentication into an Android project. Use this website as a guide:
 
 https://firebase.google.com/docs/android/setup
 
@@ -29,11 +29,19 @@ Easy to update and maintain.
 
 Less chance of version conflicts.
 
-- Connect firebase to your project
+### Connect firebase to your project
 
 Go to the Firebase Console > Authentication > Sign-in method and enable Email/Password.
 
-- Implement email and password authentication.
+### Implement email and password authentication.
+
+**Make sure internet permissions for you project is enabled in your android manifest file**
+
+**Make sure your emulator is connected to the wifi**
+
+**Make sure your API key in your json file matches you API key in your Firebase project**
+
+https://cloud.google.com/apis - This is where you will find your APIs for firebase projects
 
 Create Two Kotlin Classes:
 
