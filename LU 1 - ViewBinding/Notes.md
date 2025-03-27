@@ -13,16 +13,14 @@ This results in safer, cleaner, and more maintainable code.
 1. **Enable ViewBinding in the App level gradle file**
 
     buildFeatures {
-        
         viewBinding = true
-   
-    }
+   }
    
    This enables ViewBinding for your project.
 
    Layouts will be automatically generated with a name similar to: ActivityMainBinding.
 
-2. **Use View Binding in Your Activity**
+3. **Use View Binding in Your Activity**
 
 Import the generated binding class at the top of the .kt activity file
 
