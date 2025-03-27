@@ -43,6 +43,8 @@ Go to the Firebase Console > Authentication > Sign-in method and enable Email/Pa
 
 https://cloud.google.com/apis - This is where you will find your APIs for firebase projects
 
+**Instructions**
+
 Create Two Kotlin Classes:
 
 MainActivity.kt for the login screen
