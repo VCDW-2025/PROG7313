@@ -35,7 +35,7 @@ Go to the Firebase Console > Authentication > Sign-in method and enable Email/Pa
 
 ### Implement email and password authentication.
 
-**Eoor Tips:**
+**Error Tips:**
 
 **Make sure internet permissions for you project is enabled in your android manifest file**
 
