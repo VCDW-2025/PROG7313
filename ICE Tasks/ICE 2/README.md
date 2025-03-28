@@ -9,11 +9,11 @@ Create a new project or activity called SplitTipActivity.
 Enable ViewBinding in your build.gradle (Module):
 
 
+```
 buildFeatures {
-
-    viewBinding true
-    
+    viewBinding true 
 }
+```
 
 ## ✅ 2. Layout File: activity_split_tip.xml
 
