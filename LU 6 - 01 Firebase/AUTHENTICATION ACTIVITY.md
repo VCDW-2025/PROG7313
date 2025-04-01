@@ -104,6 +104,8 @@ In `MainActivity.kt`:
 ### 🔁 **Link Login and Register Screens**
 - In both activities, allow navigation between them using `Intent` when the **TextView link** is clicked (e.g., “Don’t have an account? Register here.”)
 
+Repo: https://github.com/talia0404/Firebase-Demo 
+
 ---
 
 ### 🔐 **Handle “Forgot Password” Button**
