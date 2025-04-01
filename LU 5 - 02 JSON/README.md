@@ -108,19 +108,19 @@ With JSON data in the request body.
 ### ✅ **3. Use a Library to Work with JSON Data**
 **Gson**, as covered in your manual, is a Google-maintained library that simplifies working with JSON:
 
-- **Deserialize** (JSON → Object):
+- **Deserialise** (JSON → Object):
   ```kotlin
   val order = Gson().fromJson(jsonString, Order::class.java)
   ```
 
-- **Serialize** (Object → JSON):
+- **Serialise** (Object → JSON):
   ```kotlin
   val jsonString = Gson().toJson(order)
   ```
 
 **Alternative libraries to explore**:
 - **Moshi** (built by Square, more modern Kotlin support)
-- **Kotlinx.serialization** (native Kotlin serialization)
+- **Kotlinx.serialization** (native Kotlin serialisation)
 
 ---
 
