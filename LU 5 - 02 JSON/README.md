@@ -134,12 +134,39 @@ If you go into Node.js, Python (Flask/Django), or even .NET:
    implementation 'com.google.code.gson:gson:2.10'
    ```
 4. Read the file and parse JSON:
-   ```kotlin
-   val jsonString = context.assets.open("orders.json").bufferedReader().use { it.readText() }
-   val orders = Gson().fromJson(jsonString, Array<Order>::class.java).toList()
-   ```
+   
+
+### 🔹 **Step 3: Read the JSON file from assets**
+- Use Android’s file access tools to open the `orders.json` file.
+- Read the entire contents of the file into a single string (this will be the raw JSON).
 
 ---
+
+### 🔹 **Step 4: Use the Gson library**
+- Use the `Gson` library to handle JSON conversion.
+- You'll need to create a Gson object, which allows you to convert between JSON and Kotlin objects.
+
+---
+
+### 🔹 **Step 5: Convert the JSON string to a Kotlin List**
+- Use a type token to tell Gson what kind of data it’s converting into (in this case, a list of your data class objects).
+- Convert the JSON string to a list of Kotlin objects using Gson’s built-in functions.
+
+---
+
+### 🔹 **Step 6: Display or log the results**
+- Once deserialized, loop through the list of objects.
+- Print them to Logcat or show them in the app to verify that the data was correctly loaded and converted.
+
+---
+
+## 💡 Key Reminders:
+- JSON must exactly match the structure of your Kotlin data class (e.g., matching property names).
+- Make sure you’ve added the `Gson` dependency to your project.
+- The `assets` folder is for **read-only** files bundled with the app.
+
+---
+
 
 ### ✅ **2. Use JSON Objects to Write Data**
 **Scenario**: Save order data as a JSON string for offline use or transfer.
