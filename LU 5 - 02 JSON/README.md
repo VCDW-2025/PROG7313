@@ -91,7 +91,7 @@ With JSON data in the request body.
 **Steps**:
 1. Create an order object in code:
    ```kotlin
-   val newOrder = Order(2, "Sam", "Latte")
+   val newOrder = Order(2, "Hope", "Latte")
    ```
 2. Convert to JSON:
    ```kotlin
