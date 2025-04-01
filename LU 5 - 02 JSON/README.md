@@ -118,7 +118,7 @@ If you go into Node.js, Python (Flask/Django), or even .NET:
 
 ---
 
-### ✅ **1. Use JSON Objects to Read Data**
+### ✅ **1. Use JSON Objects to Read Data: CREATE AN APP TO DESERIALISE DATA**
 
 **Scenario**: Read a `.json` file from your app’s `assets` folder and convert it to Kotlin objects.
 
@@ -136,31 +136,31 @@ If you go into Node.js, Python (Flask/Django), or even .NET:
 4. Read the file and parse JSON:
    
 
-### 🔹 **Step 3: Read the JSON file from assets**
+ 🔹 **Step 1: Read the JSON file from assets**
 - Use Android’s file access tools to open the `orders.json` file.
 - Read the entire contents of the file into a single string (this will be the raw JSON).
 
 ---
 
-### 🔹 **Step 4: Use the Gson library**
+🔹 **Step 2: Use the Gson library**
 - Use the `Gson` library to handle JSON conversion.
 - You'll need to create a Gson object, which allows you to convert between JSON and Kotlin objects.
 
 ---
 
-### 🔹 **Step 5: Convert the JSON string to a Kotlin List**
+🔹 **Step 3: Convert the JSON string to a Kotlin List**
 - Use a type token to tell Gson what kind of data it’s converting into (in this case, a list of your data class objects).
 - Convert the JSON string to a list of Kotlin objects using Gson’s built-in functions.
 
 ---
 
-### 🔹 **Step 6: Display or log the results**
+ 🔹 **Step 4: Display or log the results**
 - Once deserialized, loop through the list of objects.
 - Print them to Logcat or show them in the app to verify that the data was correctly loaded and converted.
 
 ---
 
-## 💡 Key Reminders:
+ 💡 Key Reminders:
 - JSON must exactly match the structure of your Kotlin data class (e.g., matching property names).
 - Make sure you’ve added the `Gson` dependency to your project.
 - The `assets` folder is for **read-only** files bundled with the app.
