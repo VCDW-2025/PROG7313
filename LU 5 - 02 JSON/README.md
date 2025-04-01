@@ -2,16 +2,63 @@
 
 JSON (JavaScript Object Notation) is a lightweight, human-readable format for storing and transporting data. 
 
+#### 🧾 **Example of a JSON Object**
+Imagine you have an order in a coffee app:
+
+```json
+{
+  "orderId": 9194,
+  "customer": "Hope",
+  "item": "Latte",
+  "size": "Medium",
+  "extras": ["Oat Milk", "Vanilla Syrup"],
+  "paid": true
+}
+```
+
+This JSON:
+- Uses **curly braces `{}`** to define an object
+- Has **keys** like `"customer"`, `"item"`, and `"paid"`
+- The **values** can be text (`"Hope"`), numbers (`9194`), booleans (`true`), or even arrays (`["Oat Milk", "Vanilla Syrup"]`)
+
+---
+
 It is widely used in mobile development for:
 - Exchanging data between apps and servers (e.g., via REST APIs)
 - Saving structured data locally (e.g., user settings, order history)
 - Making data easy to read, write, and debug during development
 
 It structures data as **key-value pairs**, and supports **nested objects** and **arrays**, which is ideal for modeling real-world entities like orders, users, or products.
+  
+#### 🌐 **Example of a REST API using JSON**
+
+A mobile coffee app might call:
+
+```http
+GET https://api.coffeeapp.com/orders/1234
+```
+
+This fetches order #9194 from the server in JSON format like this:
+
+```json
+{
+  "orderId": 9194,
+  "customer": "Hope",
+  "item": "Latte"
+}
+```
+
+The app could also send a new order using:
+
+```http
+POST https://api.coffeeapp.com/orders
+```
+
+With JSON data in the request body.
 
 ---
 
-## 🛠️ **Activity Outline: Using JSON in Android**
+## 🛠️ **Activity: Using JSON in Android**
 
 ---
 
