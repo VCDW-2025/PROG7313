@@ -112,7 +112,7 @@ data class Order(
 > 💡 Think of Log.d() like printing a message to the console, but it goes to Logcat, which is Android's version of a developer console.
 ---
 
-## ✅ STEP 3: Write Data to JSON (Serialisation) & Save to SharedPreferences
+## ✅ STEP 4: Write Data to JSON (Serialisation) & Save to SharedPreferences
 
 📌 Now that we know how to load data from a file, let’s imagine we want to create a new order in code, convert it to JSON, and save it locally on the device. That way, the next time we open the app, we can read that data back.
 
