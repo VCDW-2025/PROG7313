@@ -1,76 +1,68 @@
-## 📅 **1 April**  
+### 📅 **8 April**  
 
-# **Activity: Integrating Firebase Cloud Storage**
+# **Activity: Integrating Firebase Firestore**
 
-You're extending the Book Club App to allow members to upload images.
+You're extending the Book Club App to allow members to upload and view book-related images using Firestore, rather than Firebase Storage.
 
 ---
 
 ### 🧩 Objectives:
 
-- Use Firebase Storage to upload and retrieve files.
-- Apply image selection using an `Intent`.
-- Secure access to storage via rules.
-- Display uploaded content in the app.
+- Use Firebase Firestore to upload and retrieve data (not files).
+- Use Firestore to store image URLs rather than image files.
+- Secure access to Firestore via rules.
+- Display images based on data stored in Firestore.
 
 ---
 
 ### 🔧 Dependencies to Add
 
-You’ll continue using the **Firebase BoM** (Bill of Materials) approach:
+You’ll continue using the **Firebase BoM** (Bill of Materials) approach for version consistency:
 
 ```kotlin
 implementation(platform(libs.firebase.bom))
-implementation("com.google.firebase:firebase-storage:20.3.0")
+implementation("com.google.firebase:firebase-firestore:24.3.0")
 //Catalog Ver:
-implementation(libs.firebase.storage)
+implementation(libs.firebase.firestore)
 ```
 
 This will ensure version consistency with other Firebase services already added.
 
 ---
 
-### 🔌 Connect Firebase Storage
+### 🔌 Connect Firebase Firestore
 
 1. **Open Firebase Console**  
    Go to [https://console.firebase.google.com](https://console.firebase.google.com).
 
 2. **Select your Firebase project** (Book Club App).
 
-3. In the **Build** section of the sidebar, select **Storage**.
+3. In the **Build** section of the sidebar, select **Firestore Database**.
 
-4. Click **Get Started** and select a region (europe-west1 is a good default).
+4. Click **Create Database** and choose **Start in test mode** while developing (make sure to change these rules before going to production).
 
-5. Set the security rules to **Test Mode** while developing:
-
+5. Set up your security rules like this for testing:
    ```json
    rules_version = '2';
-   service firebase.storage {
-     match /b/{bucket}/o {
-       match /{allPaths=**} {
+   service cloud.firestore {
+     match /databases/{database}/documents {
+       match /{document=**} {
          allow read, write: if true;
        }
      }
    }
    ```
 
-   > ⚠️ *Important:* Tighten these rules before going to production.
-
 ---
 
 ### 🧠 Implementation Steps:
 
 1. **Design the UI**
-   - Create a New Screen
-
-After a user logs in successfully, they get redirected to UploadActivity where they:
-
-- Select a book cover (button to select)
-- Upload a book cover (button to upload)
-- View the uploaded image (imageView to display image)
-
-The seperate screen keeps UI responsibilities clearer and avoids overloading one activity with too many features.
-
+   - Create a New Screen (UploadActivity) to handle image uploads and display:
+     - **Select a book cover** (button to select)
+     - **Upload a book cover** (button to upload)
+     - **View the uploaded image** (ImageView to display image)
+   
 2. **Add Permissions**  
    - In your `AndroidManifest.xml`, request permission to read external storage (if targeting SDK < 33).
    - If targeting Android 13 and above, use `READ_MEDIA_IMAGES`.
@@ -78,39 +70,41 @@ The seperate screen keeps UI responsibilities clearer and avoids overloading one
 3. **Select an Image**  
    - Use an `Intent.ACTION_PICK` to let users choose a photo from their gallery.
 
-4. **Upload Image to Firebase Storage**  
+4. **Upload Image to Firestore**
    - Convert the selected image URI to a `StorageReference`.
-   - Upload using `putFile()`.
+   - **Upload image to Firebase Storage** (this can still be done via Firebase Storage).
+   - After uploading, get the **download URL** of the image and store it in Firestore with relevant metadata (e.g., book name, author).
 
-5. **Retrieve and Display the Image**  
-   - Once uploaded, retrieve the download URL.
-   - Use Glide or another image-loading library to display the image from the URL.
+   Example of Firestore data:
+   ```json
+   {
+     "bookTitle": "Book Name",
+     "author": "Author Name",
+     "imageUrl": "https://path/to/your/image.jpg"
+   }
+   ```
+
+   You would store this in a Firestore collection, say `books`.
+
+5. **Retrieve and Display the Image**
+   - Use Firestore queries to retrieve the image URL and other details like book title.
+   - Use **Glide** (or similar libraries) to load the image from the Firestore URL into an `ImageView`.
 
 ---
 
-### 🔐 Storage Rules & Security
+### 🔐 Firestore Rules & Security
 
 Consider:
-
-- Public vs private access.
-- Using Firebase Authentication to secure uploads/downloads.
-- Setting rules like:
-  ```json
-  allow read, write: if request.auth != null;
-  ```
+- **Public vs private access**: Set read and write rules based on user authentication.
+- **Using Firebase Authentication** to secure uploads/downloads by users:
+   ```json
+   allow read, write: if request.auth != null;
+   ```
 
 ---
 
 ### 🧪 Challenge Tasks
 
-- Allow users to delete or replace their uploaded images.
-
----
-
-### 💬 Think about:
-
-- Why Cloud Storage is preferred for large files like images?
-- What are the limitations of using Realtime Database or Firestore for storing images?
-- How would you secure uploads on a per-user basis?
+- Allow users to delete or update their uploaded images by interacting with Firestore (deleting/updating documents).
 
 ---
