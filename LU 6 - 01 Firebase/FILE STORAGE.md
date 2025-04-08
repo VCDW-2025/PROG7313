@@ -57,6 +57,8 @@ This will ensure version consistency with other Firebase services already added.
 
 ### 🧠 Implementation Steps:
 
+When a user logs in they should to to the UploadActivity Screen.
+
 1. **Design the UI**
    - Create a New Screen (UploadActivity) to handle image uploads and display:
      - **Select a book cover** (button to select)
