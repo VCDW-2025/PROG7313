@@ -66,7 +66,7 @@ When a user logs in, they should be directed to the **UploadActivity Screen**.
    - **Enter an author name**
    - **View the uploaded image** (ImageView to display image)
    - **Select a book cover** (button to select)
-   - **Upload a book cover** (button to upload book info into Firestore)
+   - **Upload a book details** (button to upload book info into Firestore)
   
 **Optional (Recommended) - Store the image in a local database (RoomDB)**
 
