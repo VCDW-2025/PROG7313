@@ -67,6 +67,8 @@ When a user logs in, they should be directed to the **UploadActivity Screen**.
    - **View the uploaded image** (ImageView to display image)
    - **Add an book name**
    - **Add an author name**
+  
+**Optional (Recommended) - Store the image in a local database (RoomDB)**
 
 2. **Add Permissions**  
    - In your `AndroidManifest.xml`, request permission to read external storage (if targeting SDK < 33).
