@@ -1,6 +1,6 @@
 ## ✅ **Overview**
 You’ll be doing two things:
-1. **Set up local tests** 
+1. **Set up local tests** for your new Android project.
 2. **Create a GitHub Actions workflow** that:
    - Runs these tests on every push or pull request.
    - Builds your app to check for errors.
@@ -9,13 +9,16 @@ You’ll be doing two things:
 
 ## ✅ **PART 1: Write a Simple Test (optional but I recommend it)**
 
-Add a basic test if you don't already have one.
-
 ### 🔹 In Android Studio:
-1. Right-click the `java` folder of your app module.
-2. Go to:  
-   **New → Java/Kotlin Class → JUnit Test**
-3. Example (in `app/src/test/java/...`):
+1. **Create a new Android project** (if you haven't already).
+   - Open Android Studio and select **New Project**.
+   - Choose an empty activity and proceed with the default settings.
+
+2. Right-click the `java` folder of your app module.
+   - Go to:  
+     **New → Java/Kotlin Class → JUnit Test**
+   
+3. Name the class (e.g., `OrderTest`), and add a basic test for a simple class in your app. Here's an example test for an `Order` class:
 
 ```kotlin
 import org.junit.Test
@@ -37,23 +40,25 @@ This test checks that an `Order` object is created correctly.
 ## ✅ **PART 2: Create GitHub Actions Workflow**
 
 ### 🔹 Step 1: Push Your Code to GitHub
-Make sure your Android project is in a GitHub repository.
+1. Create a new repository on GitHub.
+2. Open Android Studio and go to **VCS → Git → Share Project on GitHub**.
+3. Follow the prompts to push your project to GitHub.
 
 ---
 
 ### 🔹 Step 2: Add a GitHub Actions Workflow
 
-In your repo, go to:
-```
-.github/workflows/
-```
+1. In your GitHub repo, go to:
+   ```
+   .github/workflows/
+   ```
 
-Create a file named:
-```
-android.yml
-```
+2. Create a file named:
+   ```
+   android.yml
+   ```
 
-Paste this standard Android CI configuration:
+3. Paste the following standard Android CI configuration in the `android.yml` file:
 
 ```yaml
 name: Android CI
@@ -100,20 +105,22 @@ jobs:
 
 ---
 
-## ✅ View Results on GitHub
+## ✅ **View Results on GitHub**
 
 Once you push:
 1. Go to your GitHub repo.
 2. Click the **"Actions" tab**.
 3. You’ll see a workflow run triggered.
-4. You can expand the steps to view logs, errors, or test results.
+4. Expand the steps to view logs, errors, or test results.
 
 ---
 
-## 🧠 Why This Matters
+## 🧠 **Why This Matters**
 - Confirms your code works on other machines, not just yours (like your marker's).
 - Catches errors early when collaborating.
 - Encourages test-driven development.
 - Impresses industry professionals — many expect CI/CD workflows like this.
 
----
+--- 
+
+This updated guide walks you through setting up a basic test and automating your workflow in GitHub Actions for a fresh Android project. Let me know if you need help with any step!
