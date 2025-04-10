@@ -77,13 +77,15 @@ When a user logs in, they should be directed to the **UploadActivity Screen**.
 
 4. **Store Details in Firestore**  
    After the user selects the image and enters the book details, instead of uploading the image to Firebase Storage, you’ll upload the book information to the Firestore Database.
+   Use cloud storage to store the image and hardcode the url into the android project.
 
    Here’s an example of storing the data in Firestore:
 
    ```json
    {
      "bookTitle": "Book Name",
-     "author": "Author Name"
+     "author": "Author Name",
+     "imageUrl": "Https:..."
    }
    ```
 **Opional** Store the image in local storage.(RoomDB)
