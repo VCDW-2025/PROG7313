@@ -62,11 +62,11 @@ When a user logs in, they should be directed to the **UploadActivity Screen**.
 
 1. **Design the UI**  
    Create a new screen (`UploadActivity`) to handle image URL uploads and display:
-   - **Select a book cover** (button to select)
-   - **Upload a book cover** (button to upload)
+   - **Enter an book name** 
+   - **Enter an author name**
    - **View the uploaded image** (ImageView to display image)
-   - **Add an book name**
-   - **Add an author name**
+   - **Select a book cover** (button to select)
+   - **Upload a book cover** (button to upload book info into Firestore)
   
 **Optional (Recommended) - Store the image in a local database (RoomDB)**
 
