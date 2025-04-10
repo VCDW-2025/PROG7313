@@ -1,15 +1,15 @@
-### 📅 **8 April**  
+### 📅 **7 April - 10 April**
 
 # **Activity: Integrating Firebase Firestore**
 
-You're extending the Book Club App to allow members to upload and view book-related images using Firestore, rather than Firebase Storage.
+You're extending the **Book Club App** to allow members to upload and view book-related images using Firestore to store the image URLs, rather than Firebase Storage for the images themselves.
 
 ---
 
 ### 🧩 Objectives:
 
-- Use Firebase Firestore to upload and retrieve data (not files).
-- Use Firestore to store image URLs rather than image files.
+- Use **Firebase Firestore** to store metadata about the book images (not the images themselves).
+- Store **image URLs** in Firestore rather than uploading the actual image files to Firebase Storage.
 - Secure access to Firestore via rules.
 - Display images based on data stored in Firestore.
 
@@ -41,7 +41,8 @@ This will ensure version consistency with other Firebase services already added.
 
 4. Click **Create Database** and choose **Start in test mode** while developing (make sure to change these rules before going to production).
 
-5. Set up your security rules like this for testing:
+5. Set up your Firestore security rules like this for testing (remember to change these before going to production):
+
    ```json
    rules_version = '2';
    service cloud.firestore {
@@ -57,27 +58,26 @@ This will ensure version consistency with other Firebase services already added.
 
 ### 🧠 Implementation Steps:
 
-When a user logs in they should to to the UploadActivity Screen.
+When a user logs in, they should be directed to the **UploadActivity Screen**.
 
-1. **Design the UI**
-   - Create a New Screen (UploadActivity) to handle image uploads and display:
-     - **Select a book cover** (button to select)
-     - **Upload a book cover** (button to upload)
-     - **View the uploaded image** (ImageView to display image)
-   
+1. **Design the UI**  
+   Create a new screen (`UploadActivity`) to handle image URL uploads and display:
+   - **Select a book cover** (button to select)
+   - **Upload a book cover** (button to upload)
+   - **View the uploaded image** (ImageView to display image)
+
 2. **Add Permissions**  
    - In your `AndroidManifest.xml`, request permission to read external storage (if targeting SDK < 33).
    - If targeting Android 13 and above, use `READ_MEDIA_IMAGES`.
 
 3. **Select an Image**  
-   - Use an `Intent.ACTION_PICK` to let users choose a photo from their gallery.
+   - Use an `Intent.ACTION_PICK` to allow users to choose a photo from their gallery.
 
-4. **Upload Image to Firestore**
-   - Convert the selected image URI to a `StorageReference`.
-   - **Upload image to Firebase Storage** (this can still be done via Firebase Storage).
-   - After uploading, get the **download URL** of the image and store it in Firestore with relevant metadata (e.g., book name, author).
+4. **Store Image URL in Firestore**  
+   After the user selects the image, instead of uploading the image to Firebase Storage, you’ll upload the image to a public image hosting service and store the image URL in **Firestore**.
 
-   Example of Firestore data:
+   Here’s an example of storing the data in Firestore:
+
    ```json
    {
      "bookTitle": "Book Name",
@@ -86,11 +86,26 @@ When a user logs in they should to to the UploadActivity Screen.
    }
    ```
 
-   You would store this in a Firestore collection, say `books`.
+   The **Firestore** document (for example, in a `books` collection) will have the metadata for the image (e.g., book title, author) and the **image URL**.
 
-5. **Retrieve and Display the Image**
-   - Use Firestore queries to retrieve the image URL and other details like book title.
+5. **Retrieve and Display the Image**  
+   - Use **Firestore queries** to retrieve the image URL and other details like the book title.
    - Use **Glide** (or similar libraries) to load the image from the Firestore URL into an `ImageView`.
+
+   Example code to retrieve the image and display it using Glide:
+   ```kotlin
+   FirebaseFirestore.getInstance().collection("books")
+       .get()
+       .addOnSuccessListener { result ->
+           for (document in result) {
+               val imageUrl = document.getString("imageUrl")
+               Glide.with(this).load(imageUrl).into(imageViewBookCover)
+           }
+       }
+       .addOnFailureListener { exception ->
+           Log.w(TAG, "Error getting documents: ", exception)
+       }
+   ```
 
 ---
 
