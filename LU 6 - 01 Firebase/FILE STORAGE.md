@@ -65,6 +65,8 @@ When a user logs in, they should be directed to the **UploadActivity Screen**.
    - **Select a book cover** (button to select)
    - **Upload a book cover** (button to upload)
    - **View the uploaded image** (ImageView to display image)
+   - **Add an book name**
+   - **Add an author name**
 
 2. **Add Permissions**  
    - In your `AndroidManifest.xml`, request permission to read external storage (if targeting SDK < 33).
@@ -73,20 +75,18 @@ When a user logs in, they should be directed to the **UploadActivity Screen**.
 3. **Select an Image**  
    - Use an `Intent.ACTION_PICK` to allow users to choose a photo from their gallery.
 
-4. **Store Image URL in Firestore**  
-   After the user selects the image, instead of uploading the image to Firebase Storage, you’ll upload the image to a public image hosting service and store the image URL in **Firestore**.
+4. **Store Details in Firestore**  
+   After the user selects the image and enters the book details, instead of uploading the image to Firebase Storage, you’ll upload the book information to the Firestore Database.
 
    Here’s an example of storing the data in Firestore:
 
    ```json
    {
      "bookTitle": "Book Name",
-     "author": "Author Name",
-     "imageUrl": "https://path/to/your/image.jpg"
+     "author": "Author Name"
    }
    ```
-
-   The **Firestore** document (for example, in a `books` collection) will have the metadata for the image (e.g., book title, author) and the **image URL**.
+**Opional** Store the image in local storage.(RoomDB)
 
 5. **Retrieve and Display the Image**  
    - Use **Firestore queries** to retrieve the image URL and other details like the book title.
