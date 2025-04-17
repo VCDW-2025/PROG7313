@@ -51,3 +51,5 @@
 
 Good luck guiding your users across the galaxy of screens—your nav bar is now mission‑ready! 🚀
 
+
+External Link: https://www.geeksforgeeks.org/bottom-navigation-bar-in-android/
