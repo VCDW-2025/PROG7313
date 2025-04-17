@@ -1,81 +1,56 @@
-Imagine you’re creating an Android app called “**Galactic Donut Shop**.” In this fun, space-themed app, users can explore different types of interstellar donuts and then customise how many donuts they want to buy (with a sleek slider/SeekBar). The app will automatically calculate the total cost using NumberFormat, ensuring everything looks neat and readable—just like a professional receipt. Navigation between different parts of the app (like the donut menu, checkout, and fun facts about space) is handled with a modern Navigation Drawer.
+### 🍩 Practical Activity – “Galactic Donut Shop” (Navigation‑First)
+
+Build a small Android app with **two distinct screens**:
+
+1. **Add Donut** – users enter a donut name, description and pick an image.  
+2. **Donut List** – users see all saved donuts in a scrolling list.
+
+The two screens are connected with a **bottom navigation bar**. You **must implement the nav bar first** before designing either screen.
 
 ---
 
-## Description of the App
+#### Phase‑by‑Phase Instructions
 
-1. **Splash Screen**  
-   - When the user opens the app, a splash screen briefly shows the “Galactic Donut Shop” logo and a spaceship background.
+**1. Project Skeleton**  
+- Create a new Android Studio project (Empty Activity, Kotlin).  
+- Choose a minimum SDK that supports the libraries you intend to use and briefly note why you picked it.
 
-2. **Main Activity with Navigation Drawer**  
-   - The main screen contains a **Navigation Drawer** on the left side. This lets users move between:
-     - **Donut Menu**: A list of all the cosmic donuts available (e.g., “Martian Matcha,” “Saturn Sprinkle,” “Black Hole Chocolate”).
-     - **Customize/Calculator**: The screen where the user picks how many donuts they want.
-     - **Fun Facts**: Fun, random facts about donuts in space!
-     - **Checkout**: A summary of the user’s order.
+**2. Build the Bottom Navigation Bar (start here!)**  
+- Add a bottom navigation view to your main layout.  
+- Create two menu items: “Add Donut” and “Donut List,” each with an intuitive icon and label.  
+- Set up a Navigation Component graph that swaps fragments when the user selects an item.  
+- Test navigation right away; both items can display placeholder text for now.
 
-3. **Using a SeekBar for Donut Quantity**  
-   - On the “Customize/Calculator” screen, there is a **SeekBar** that allows the user to select how many donuts they want to purchase, ranging from 1 donut up to, say, 50 donuts.
-   - As the user slides the SeekBar, the quantity displays in real-time on the screen (like “You’ve selected 25 donuts!”).
+**3. Screen A – Add Donut**  
+- Design a simple form containing:  
+  • Name field (single‑line)  
+  • Description field (multi‑line)  
+  • Button or image placeholder to pick a gallery photo  
+  • Save button (disabled until all fields are valid)  
+- Plan image selection with the modern Activity Result API and decide how you will store the returned URI.  
+- Draft validation rules (no empty fields, optional image placeholder if none chosen).  
+- Decide what feedback the user receives on successful save or validation failure.
 
-4. **NumberFormat for Prices**  
-   - The price of each donut is, for example, **2.99** (in some Earth currency or maybe Martian credits—get creative).
-   - When the user moves the SeekBar, the app multiplies the donut price by the number of donuts selected.
-   - **NumberFormat** is used to convert the resulting price into a **currency format** (e.g., `$29.90` or `USD 29.90`). This ensures it always looks professional (two decimals, currency symbol, etc.).
+**4. Screen B – Donut List**  
+- Sketch a RecyclerView layout where each list item shows the donut’s image, name and a short description.  
+- Determine a strategy for refreshing the list automatically whenever new donuts are added (think LiveData or Flow observed in a ViewModel).  
+- Provide a pleasant empty‑state message when the list is empty.
 
-5. **Checkout Screen**  
-   - Shows a neat receipt:
-     - Donut type(s) selected
-     - Quantity
-     - Formatted total cost (using NumberFormat)
-   - The user can then confirm the purchase or go back to tweak their order.
+**5. Local Persistence with Room**  
+- Outline an Entity that stores an auto‑generated id, name, description and image URI string.  
+- List the DAO actions you need (insert donut, get all donuts).  
+- Explain where you will create the database instance and how fragments will obtain a reference (e.g., via a Repository and shared ViewModel).  
+- Mention thread safety: inserts should occur on a background dispatcher.
 
----
+**6. Data Flow**  
+- Describe how pressing **Save** on the Add Donut screen writes to Room, then how the Donut List screen observes changes and updates instantly.  
+- Note what should happen when users navigate away and return, or when they rotate the device.
 
-## Assignment Prompt for Students
+**7. UX Polish & Error Handling**  
+- Save button remains disabled until inputs are valid.  
+- Show concise toasts or snackbars for successes and errors.  
+- Provide a default placeholder image if the user cancels image selection.  
+- Think about state restoration after process death (e.g., use ViewModel to store temporary input).
 
-1. **Outline the App Flow**  
-   - Describe the overall flow of the “Galactic Donut Shop” app: from the splash screen through the main screen and navigation drawer items.
 
-2. **Detail the Navigation Drawer Integration**  
-   - Explain how you added the navigation drawer.
-   - What are the **menu items**, and how do you handle item selection?
-
-3. **Implementing the SeekBar**  
-   - Show how you manage the SeekBar in code:
-     - Where do you initialize it?
-     - How do you set a **maximum** value?
-     - How do you **listen** for changes so the app updates the displayed quantity live?
-
-4. **Formatting the Price**  
-   - Discuss how you import and use **NumberFormat** (e.g., `NumberFormat.getCurrencyInstance()`).
-   - Show how the chosen locale or currency symbol is displayed.
-
-5. **In-Depth Program Flow**  
-   - Step-by-step, what happens when the user slides the SeekBar to select 25 donuts?
-   - How does the app calculate total cost and format it with NumberFormat?
-   - How is this displayed to the user?
-   - How does the user navigate back to the donut menu if they want a different flavor?
-
-6. **Class & Activity Structures**  
-   - Provide an overview of how you organized your app’s classes/activities/fragments.
-   - For example:
-     - **MainActivity** (contains the Navigation Drawer)
-     - **CalculatorFragment** or **Activity** (contains the SeekBar logic and NumberFormat code)
-     - **FunFactsFragment** (displays the donut facts)
-     - **CheckoutFragment** (final order summary)
-   - Explain how data (like donut price, quantity, total) is passed around.
-
-7. **User Experience**  
-   - How does the user know the cost? (Always keep it updated in real-time on the screen.)
-   - How do they confirm/cancel an order?
-
-8. **Potential Edge Cases**  
-   - What happens if the user tries to buy zero donuts or goes beyond your maximum limit?
-   - How do you handle any errors or unusual user interactions?
-
----
-
-### **Your Task**  
-Pretend you’re explaining your “Galactic Donut Shop” app to someone who wants to read your entire blueprint. **Walk through** the code sections, **show** how each feature is implemented, and **justify** why you used these components (Navigation Drawer, SeekBar, NumberFormat). Make your explanation **detailed**, so others can see exactly how it all works, from launching the app to final checkout. 
-
+Have fun exploring the galaxy of donuts 🚀
