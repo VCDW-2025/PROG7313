@@ -1,4 +1,4 @@
-# Navigation Bar Implementation
+# 🚀**Navigation Bar Implementation**
 ---
 
 ### 1  Set up the fragments
@@ -73,3 +73,8 @@
        * Syncs the system Back button with the graph’s back‑stack.
 
 ---
+
+Good luck guiding your users across the galaxy of screens—your navigation bar is now mission‑ready! 🚀
+
+
+External Link: https://www.geeksforgeeks.org/bottom-navigation-bar-in-android/ only addkeep in studd for nav bar. not drawer
