@@ -1,3 +1,36 @@
+# **Navigation Bars** 🚀
+
+**1. What is a navigation bar?**  
+A navigation bar is a visual, on‑screen component that lets users jump between the main sections (or “destinations”) of an app quickly. Think of it as the app’s roadmap: tap an item, and the app takes you straight to that screen.
+
+**2. Key terms**
+
+- **Destination** – a screen or fragment the user can land on.  
+- **Top‑level destination** – a root screen (no Up arrow). In a bottom nav, each icon is usually top‑level.  
+- **NavController / NavHost** – Android Jetpack classes that actually swap the visible fragment when the user taps an item.
+
+**3. Design rules**
+
+1. **Clarity first** – Icons + labels should be unambiguous (“+”, “List”).  
+2. **3‑5 items only** – More than five in a bottom bar shrinks touch targets and hurts usability.  
+3. **Persistent** – The bar stays on screen while navigating between its top‑level destinations, reinforcing where the user is.  
+4. **State feedback** – The selected item should highlight (tint, filled icon) so the user knows their current location.
+
+**4. Typical implementation flow (Bottom Nav)**
+
+1. **Create a menu** file with one `<item>` per section.  
+2. **Add BottomNavigationView** to your Activity’s layout and point `app:menu` to that file.  
+3. **Set up Navigation Component**: create a nav graph, drag in fragments, mark the start destination.  
+4. **Connect bar to NavController** via `setupWithNavController()`. Now tapping icons triggers navigation automatically.
+
+**5. Advantages**
+
+- **Predictability** – Users always know where core screens are.  
+- **Single‑tap access** – No extra gestures (unlike drawers).  
+- **Small footprint** – Leaves most of the screen free for content.
+
+---
+
 ## 🧭 Navigation Drawer
 
 1. **What it is**  
