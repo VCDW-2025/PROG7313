@@ -1,4 +1,3 @@
-Below is a quick-reference guide to the moving parts you wire together when you add a **navigation bar** (most commonly a *BottomNavigationView*, but the same building blocks apply to a material “top app bar + tabs” setup) using Jetpack Navigation in Android Studio.
 
 | Layer | File / Class | Why it matters | Typical contents |
 |-------|--------------|----------------|------------------|
