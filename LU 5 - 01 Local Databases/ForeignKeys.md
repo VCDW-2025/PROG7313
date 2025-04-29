@@ -5,7 +5,7 @@
    - Room will automatically persist that integer column.
 
 2. **Extend your DAO with a filter method**  
-   - Define a DAO function like `fun getXForUser(userId: Int): List<Donut>` annotated with `@Query("SELECT * FROM donuts WHERE userId = :userId")`.  
+   - Define a DAO function like `fun getXForUser(userId: Int): List<Donut>` annotated with `@Query("SELECT * FROM x WHERE userId = :userId")`.  
    - This returns only the x that belong to a given user.
   
 3. **Pass the current user’s ID when querying**  
