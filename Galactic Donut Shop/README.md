@@ -1,4 +1,4 @@
-### 🍩 Practical Activity – “Galactic Donut Shop” (Navigation‑First)
+### 🍩 **Galactic Donut Shop**
 
 Build a small Android app with **two distinct screens**:
 
