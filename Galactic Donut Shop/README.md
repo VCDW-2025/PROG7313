@@ -1,4 +1,4 @@
-### 🍩 **Galactic Donut Shop**
+# 🍩 **Galactic Donut Shop**
 
 Build a small Android app with **two distinct screens**:
 
@@ -20,6 +20,8 @@ The two screens are connected with a **bottom navigation bar**. You **must imple
 - Create two menu items: “Add Donut” and “Donut List,” each with an intuitive icon and label.  
 - Set up a Navigation Component graph that swaps fragments when the user selects an item.  
 - Test navigation right away; both items can display placeholder text for now.
+
+🍩 **Galactic Donut Shop**
 
 **3. Screen A – Add Donut**  
 - Design a simple form containing:  
