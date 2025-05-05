@@ -98,3 +98,10 @@ OR let the user enter details.
 
 ---
 
+Resources:
+
+- How to use MPAndroidChart in Android Studio!, Medium. https://medium.com/@SeanAT19/how-to-use-mpandroidchart-in-android-studio-c01a8150720f
+- Android – Create BarChart with Kotlin, Geeksforgeeks. https://www.geeksforgeeks.org/android-create-barchart-with-kotlin/
+- Official Documentation: github.com/PhilJay/MPAndroidChart
+
+
