@@ -4,7 +4,7 @@ A **visual graph** (or chart) is a UI component that displays data visually — 
 
 * **Bar Charts** for comparing values.
 * **Line Charts** for trends over time.
-* **Pie Charts** for proportion.
+* **Pie Charts** for proportiom.
 
 ---
 
