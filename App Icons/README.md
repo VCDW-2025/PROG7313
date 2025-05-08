@@ -38,4 +38,4 @@ Designers choose colors and symbols that resonate with their target audience. Fo
 
 ---
 
-**Resource: Create app icons, Android Developera - https://developer.android.com/studio/write/create-app-icons**
+### **Resource: Create app icons, Android Developera - https://developer.android.com/studio/write/create-app-icons**
