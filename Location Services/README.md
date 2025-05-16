@@ -37,7 +37,7 @@
 2. Show a **moving location marker**.
 3. Update every few seconds (or based on movement).
 
-**Resource: Real-Time Location Tracking Made Easy with Fused Location Provider, Medium - https://medium.com/@myofficework000/real-time-location-tracking-made-easy-with-fused-location-provider-43de6437fbd3**
+#### Resource: Real-Time Location Tracking Made Easy with Fused Location Provider, Medium - https://medium.com/@myofficework000/real-time-location-tracking-made-easy-with-fused-location-provider-43de6437fbd3
 ---
 
 ## ⭐ **Phase 4: Drop Pins & Save Places**
