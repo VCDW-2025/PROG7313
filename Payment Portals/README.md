@@ -1,6 +1,6 @@
 ## **What to do now?**
 
-### **Planning how you want the user to get from your app to the payment portal.**
+### **Planning AND integrating how you want the user to get from your app to the payment portal.**
 
 
 How to integrate a payment gateway into a mobile app - Planet: https://www.weareplanet.com/blog/integrate-payment-gateway-mobile-app
