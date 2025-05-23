@@ -62,5 +62,11 @@ By the end of this activity, you should:
 
 ---
 
+### Resources:
 
+Introduction to animations, Android - https://developer.android.com/develop/ui/views/animations/overview
+
+How to Make Animated Submit and Failed Buttons in Android?, Geeks for Geeks - https://www.geeksforgeeks.org/how-to-make-animated-submit-and-failed-buttons-in-android/
+
+How to implement Floating Action Button with Animation in Android (without plugin), Medium - https://androidapps-development-blogs.medium.com/how-to-implement-floating-action-button-with-animation-in-android-without-plugin-c7db6e9b30cb
 
