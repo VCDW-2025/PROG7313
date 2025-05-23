@@ -1,4 +1,4 @@
-# 🎮 **Student Activity: Animate the Game Button**
+# 🎮 **Activity: Animate the Game Button**
 
 ### **Objective:**
 
