@@ -75,7 +75,7 @@ Use the **distance formula**:
 * Display the current score on the screen.
 * Use `SharedPreferences` to save the last score and retrieve it when the app is reopened.
 
---
+---
 
 #### 🔹 Part 4: Finishing Touches (Optional)
 
