@@ -33,6 +33,7 @@ By completing this activity, you will be able to:
 
 🌀 **Step 3: Make the Bubbles Move Upward**
 
+---
 
 ### 🔹 Part 2: Handling User Interaction
 
@@ -54,8 +55,6 @@ Use the **distance formula**:
    * Distance = √((x2 - x1)² + (y2 - y1)²)
    * If this distance is **less than or equal to the bubble’s radius**, the tap hit that bubble.
 
----
-
 **Step 3: Pop the Bubble and Update the Game State**
 
 1. If a tap hit a bubble:
@@ -65,16 +64,18 @@ Use the **distance formula**:
     
 2. You could show a toast, sound effect, or visual pop animation 
 
----
-
 **Step 4: Redraw the View**
 
 1. After modifying the bubble list or score reflect the updated bubble positions.
+
+---
 
 #### 🔹 Part 3: Tracking and Displaying Score
 
 * Display the current score on the screen.
 * Use `SharedPreferences` to save the last score and retrieve it when the app is reopened.
+
+--
 
 #### 🔹 Part 4: Finishing Touches (Optional)
 
