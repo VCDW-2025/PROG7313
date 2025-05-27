@@ -27,6 +27,13 @@ By completing this activity, you will be able to:
 * Use the `onDraw()` method to draw multiple blue **circles (bubbles)** at random positions on the canvas.
 * Continuously move bubbles **upwards** using a repeating update.
 
+🎨 Step 1: Create a Custom View Class
+
+🖼️ Step 2: Override the `onDraw()` Method
+
+🌀 Step 3: Make the Bubbles Move Upward
+
+
 #### 🔹 Part 2: Handling User Interaction
 
 * Implement `onTouchEvent()` to detect taps.
