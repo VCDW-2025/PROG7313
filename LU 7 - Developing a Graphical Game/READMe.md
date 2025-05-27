@@ -1,6 +1,50 @@
 ## **Learning Unit 7: Developing a Graphical Game**
 
-### **Learning Objectives & Notes**
+This section guides you through building a **2D Android game from scratch** using Kotlin and the Android graphics APIs. The game focuses on drawing bitmaps, handling user input, detecting collisions, and applying basic animations.
+
+---
+
+### 🧩 Key Concepts & Steps
+
+#### 1. **Custom Drawing Using Canvas**
+
+* Instead of using XML layouts, you create a custom class (e.g., `BirdieGameView`) that **extends `View`**.
+* You override the `onDraw()` method to draw game elements like backgrounds and characters directly on the canvas.
+
+#### 2. **Bitmaps**
+
+* Bitmaps are used to draw characters (e.g., birds, Pugicorns) and UI elements like lives and background.
+* `BitmapFactory.decodeResource()` is used to load image assets from `res/drawable`.
+
+#### 3. **Touch Events**
+
+* You override `onTouchEvent()` to respond to taps.
+* Each tap makes the bird flap and move upward, controlled by a `birdSpeed` variable.
+
+#### 4. **Game Loop with Timer or Executor**
+
+* `Executor` is used to run `invalidate()` every 30ms, which causes continuous redrawing for animation.
+* This creates the illusion of movement and interactivity.
+
+#### 5. **Animating Game Elements**
+
+* Characters move across the screen by updating X/Y coordinates each time `onDraw()` is called.
+* Random Y positions and speed variation simulate natural motion.
+
+#### 6. **Collisions**
+
+* You create a `collisionCheck(x, y)` function to detect if the bird hits another object (e.g., RainbowCuppicake).
+* When collisions occur, lives decrease and visual feedback (ghost icons, Toasts) is triggered.
+
+#### 7. **Lives and Game Over**
+
+* Life icons are shown and updated.
+* When all lives are lost, "GAME OVER" is drawn on the screen, and animation stops.
+
+#### 8. **Leveling Up**
+
+* You’re encouraged to create multiple levels (e.g., add a taco worth 50 points in Level 2).
+* At 100 points, the game transitions to a new level with different logic and appearance.
 
 ---
 
