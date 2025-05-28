@@ -83,6 +83,34 @@ val db = Firebase.firestore
 db.collection("expenses").add(Expense("Taxi", 100f))
 ```
 
+You can safely **delete your DAO files**. But do so **only after**:
+
+### You’ve Done the Following:
+
+1. **Replaced all Room database operations** in your app with Firestore equivalents:
+
+   * `insert()` → `collection().add()`
+   * `getAll()` → `collection().get()`
+   * `update()` → `document().update()`
+   * `delete()` → `document().delete()`
+
+2. **Removed Room annotations** (e.g., `@Dao`, `@Insert`, `@Query`) and data access logic from your codebase.
+
+3. **Tested Firestore read/write** across your entire app to make sure it works without Room.
+
+---
+
+### 🔥 When You Can Delete DAO Files
+
+If:
+
+* You’ve removed all Room-related code from your ViewModels, Repositories, and Activities/fragments
+* Your Firestore setup works consistently
+* You’ve removed Room dependencies from `build.gradle`
+
+Then:
+**You can delete your DAO interfaces (`ExpenseDao.kt`, etc.) and any `RoomDatabase` subclass (`AppDatabase.kt`).**
+
 ---
 
 ### 🧠 Important Notes
