@@ -70,3 +70,4 @@ How to Make Animated Submit and Failed Buttons in Android?, Geeks for Geeks - ht
 
 How to implement Floating Action Button with Animation in Android (without plugin), Medium - https://androidapps-development-blogs.medium.com/how-to-implement-floating-action-button-with-animation-in-android-without-plugin-c7db6e9b30cb
 
+Animation in Android with Example, GeeksforGeeks - https://www.geeksforgeeks.org/animation-in-android-with-example/
